@@ -299,5 +299,5 @@ let returnData;
 if (direction == "2") {
   // returnData = globalFunctions.InsertActivity();
 } else {
-  returnData = globalFunctions.ValidateToken();
+  // returnData = globalFunctions.ValidateToken();
 }
