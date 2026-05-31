@@ -252,43 +252,43 @@ class Global {
       ).toFixed(1)
     );
 
-    var diff = parseInt((endtime.getTime() - starttime.getTime()) / 1000);
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + this.tokenId + "",
-      },
-      body: JSON.stringify({
-        studentPoints: this.studentDegreeResult,
-        learningDurationInSec: diff,
-        code: this.code,
-        activityId: id,
-        learningObjectAsJson: JSON.stringify(posts),
-        totalDegree: posts.numberOfquestion,
-        studentDegree: this.studentDegreeResult,
-        LODegree: posts.loDegree,
-      }),
-    };
-    // console.log(requestOptions);
-    fetch(baseURL + "Student/UpdateStudentActivity", requestOptions)
-      .then(async (response) => {
-        const data = await response.json();
-        if (response.statusCode == 440) {
-          newFinalResponse.enforceLogout();
-          return;
-        }
-        newFinalResponse.submitData(
-          posts,
-          this.code,
-          posts.counterCorrect,
-          data,
-          this.studentDegreeResult
-        );
-      })
-      .catch((error) => {
-        // console.log(error);
-      });
+  //   var diff = parseInt((endtime.getTime() - starttime.getTime()) / 1000);
+  //   const requestOptions = {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: "Bearer " + this.tokenId + "",
+  //     },
+  //     body: JSON.stringify({
+  //       studentPoints: this.studentDegreeResult,
+  //       learningDurationInSec: diff,
+  //       code: this.code,
+  //       activityId: id,
+  //       learningObjectAsJson: JSON.stringify(posts),
+  //       totalDegree: posts.numberOfquestion,
+  //       studentDegree: this.studentDegreeResult,
+  //       LODegree: posts.loDegree,
+  //     }),
+  //   };
+  //   // console.log(requestOptions);
+  //   fetch(baseURL + "Student/UpdateStudentActivity", requestOptions)
+  //     .then(async (response) => {
+  //       const data = await response.json();
+  //       if (response.statusCode == 440) {
+  //         newFinalResponse.enforceLogout();
+  //         return;
+  //       }
+  //       newFinalResponse.submitData(
+  //         posts,
+  //         this.code,
+  //         posts.counterCorrect,
+  //         data,
+  //         this.studentDegreeResult
+  //       );
+  //     })
+  //     .catch((error) => {
+  //       // console.log(error);
+  //     });
   }
 }
 
@@ -297,7 +297,7 @@ let direction = globalFunctions.setQueryStringDefaults();
 let returnData;
 
 if (direction == "2") {
-  returnData = globalFunctions.InsertActivity();
+  // returnData = globalFunctions.InsertActivity();
 } else {
   returnData = globalFunctions.ValidateToken();
 }
