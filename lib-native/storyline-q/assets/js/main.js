@@ -193,28 +193,13 @@ window.app = new Vue({
     /* ===================== DATA ===================== */
 
     async getData() {
-      if (direction == "2") {
-        await returnData.then((response) => {
-          this.isSuccess = response.isSuccess;
-          this.data = response.value;
-          this.activityId = this.data.activityId;
-          if (
-            this.data.learningObjectAsJson != "" &&
-            this.data.learningObjectAsJson != null
-          ) {
-            let jsonData = JSON.parse(this.data.learningObjectAsJson);
-            // this.posts[0] = jsonData;
-          }
-        });
+      if (runPage) {
+        this.isSuccess = true;
       } else {
-        if (runPage) {
-          this.isSuccess = true;
-        } else {
-          await returnData.then((response) => {
-            this.isSuccess = response.value;
-            this.getFeedBackJson();
-          });
-        }
+        await returnData.then((response) => {
+          this.isSuccess = response.value;
+          this.getFeedBackJson();
+        });
       }
       await fetch(pageUrl + ".json")
         .then((res) => res.json())
@@ -1000,16 +985,16 @@ window.app = new Vue({
       this.popupAudio.play();
     },
     UpdateStudentActivity() {
-      direction != ""
-        ? ((this.posts[0].title = this.data.title),
-          (this.posts[0].bloomLevels = this.data.bloomLevels),
-          (this.posts[0].learningObjectives = this.data.learningObjectives),
-          (this.posts[0].loDegree = this.data.loDegree),
-          (this.posts[0].keywords = this.data.keywords),
-          (this.posts[0].type = this.data.type),
-          (this.posts[0].unitId = this.data.unitId),
-          globalFunctions.UpdateStudentActivity(this.activityId, this.posts[0]))
-        : "";
+      // direction != ""
+      //   ? ((this.posts[0].title = this.data.title),
+      //     (this.posts[0].bloomLevels = this.data.bloomLevels),
+      //     (this.posts[0].learningObjectives = this.data.learningObjectives),
+      //     (this.posts[0].loDegree = this.data.loDegree),
+      //     (this.posts[0].keywords = this.data.keywords),
+      //     (this.posts[0].type = this.data.type),
+      //     (this.posts[0].unitId = this.data.unitId),
+      //     globalFunctions.UpdateStudentActivity(this.activityId, this.posts[0]))
+      //   : "";
     },
 
     finished() {
