@@ -193,18 +193,19 @@ window.app = new Vue({
     /* ===================== DATA ===================== */
 
     async getData() {
-      if (runPage) {
-        this.isSuccess = true;
-      } else {
-        await returnData.then((response) => {
-          this.isSuccess = response.value;
-          this.getFeedBackJson();
-        });
-      }
+      // if (runPage) {
+      //   this.isSuccess = true;
+      // } else {
+      //   await returnData.then((response) => {
+      //     this.isSuccess = response.value;
+      //     this.getFeedBackJson();
+      //   });
+      // }
       await fetch(pageUrl + ".json")
         .then((res) => res.json())
         .then((data) => {
           this.localPosts = data;
+          this.isSuccess = true;
         });
       if (this.posts.length == 0) {
         this.posts = this.localPosts;
