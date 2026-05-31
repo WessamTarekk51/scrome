@@ -1,0 +1,274 @@
+[{
+  "counterCorrect": 0,
+  "LOcorrectcounter": 0,
+  "loTargets": null,
+  "numberOfquestion": 0,
+  "id": "2025_ara_1r_2a_02_05_01_q",
+  "subjectId": "",
+  "conceptId": "",
+  "unitId": "",
+  "lessonId": "",
+  "title": "",
+  "keywords": "",
+  "learningObjectives": "",
+  "BloomLevels": [],
+  "type": "",
+  "loDegree": null,
+  "UserDegree": 0,
+  "SubType": "input",
+  "startTime": "",
+  "endTime": "",
+  "navgations": [{
+      "numOfQuestion": 0,
+      "correctCounter": 0,
+      "wrongCounter": 0,
+      "status": false,
+      "precentage": 0,
+      "name": "home",
+      "title": "كِتَابَةُ وَصْفِ صُورَةٍ (وَصْفُ مَكَانٍ)"
+    },
+    {
+      "numOfQuestion": 0,
+      "correctCounter": 0,
+      "wrongCounter": 0,
+      "status": false,
+      "precentage": 0,
+      "name": "quiz"
+
+    }
+  ],
+  "questions": [{
+      "id": 1,
+      "active": false,
+      "numberOfTrial": 0,
+      "questionlevel": "",
+      "questionType": "text",
+      "answersType": "text",
+      "startTime": "",
+      "endTime": "",
+      "type": "choose",
+      "title": "اخْتَرِ الْكَلِمَةَ الَّتِي تَصِفُ الْمَكَانَ فِي الصُّورَةِ:",
+      "question": " اخْتَرِ الْكَلِمَةَ الَّتِي تَصِفُ الْمَكَانَ فِي الصُّورَةِ:",
+      "img": "./images/1.png",
+      "soundT": "./audio/q1.mp3",
+      "soundQ": "",
+      "answers": [{
+          "choose": "مُرَتَّبٌ",
+          "select": false,
+          "answer": true,
+          "solve": false
+        },
+        {
+          "choose": "ضَيِّقٌ",
+          "select": false,
+          "answer": false,
+          "solve": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "active": false,
+      "numberOfTrial": 0,
+      "questionlevel": "",
+      "questionType": "text",
+      "answersType": "text",
+      "startTime": "",
+      "endTime": "",
+      "type": "choose",
+      "title": "اخْتَرِ الْكَلِمَةَ الَّتِي تَصِفُ الْمَكَانَ فِي الصُّورَةِ:",
+      "question": " اخْتَرِ الْكَلِمَةَ الَّتِي تَصِفُ الْمَكَانَ فِي الصُّورَةِ:",
+      "img": "./images/2.png",
+      "soundT": "./audio/q1.mp3",
+      "soundQ": "",
+      "answers": [{
+          "choose": "مُنَظَّمٌ",
+          "select": false,
+          "answer": true,
+          "solve": false
+        },
+        {
+          "choose": "مُتَّسِخٌ",
+          "select": false,
+          "answer": false,
+          "solve": false
+        }
+      ]
+    },
+
+    {
+      "id": 1,
+      "active": false,
+      "numberOfTrial": 0,
+      "questionlevel": "",
+      "questionType": "text",
+      "answersType": "text",
+      "startTime": "",
+      "endTime": "",
+      "type": "choose",
+      "title": "اخْتَرِ الْكَلِمَةَ الَّتِي تَصِفُ الْمَكَانَ فِي الصُّورَةِ:",
+      "question": " اخْتَرِ الْكَلِمَةَ الَّتِي تَصِفُ الْمَكَانَ فِي الصُّورَةِ:",
+      "img": "./images/3.png",
+      "soundQ": "",
+      "soundT": "./audio/q1.mp3",
+      "answers": [{
+          "choose": "مُنِيرَةٌ",
+          "select": false,
+          "answer": true,
+          "solve": false
+        },
+        {
+          "choose": "مُظْلِمَةٌ",
+          "select": false,
+          "answer": false,
+          "solve": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "active": false,
+      "numberOfTrial": 0,
+      "questionlevel": "",
+      "questionType": "text",
+      "answersType": "text",
+      "startTime": "",
+      "endTime": "",
+      "type": "choose",
+      "title": "اخْتَرِ الْكَلِمَةَ الَّتِي تَصِفُ الْمَكَانَ فِي الصُّورَةِ:",
+      "question": " اخْتَرِ الْكَلِمَةَ الَّتِي تَصِفُ الْمَكَانَ فِي الصُّورَةِ:",
+      "img": "./images/4.png",
+      "soundQ": "",
+      "soundT": "./audio/q1.mp3",
+      "answers": [{
+          "choose": "مُزْهِرَةٌ",
+          "select": false,
+          "answer": true,
+          "solve": false
+        },
+        {
+          "choose": "ضَيِّقَةٌ",
+          "select": false,
+          "answer": false,
+          "solve": false
+        }
+      ]
+    },
+
+
+
+    {
+      "id": 3,
+      "active": false,
+      "numberOfTrial": 0,
+      "questionlevel": "",
+      "questionType": "text",
+      "answersType": "text",
+      "startTime": "",
+      "endTime": "",
+      "type": "trueFalse",
+      "title": "حَدِّدْ مَا إِذَا كَانَتِ الْعِبَارَةُ صَحِيحَةً أَمْ خَطَأً:",
+      "question": "هَذَا مَحَلٌّ نَظِيفٌ.",
+      "img": "./images/5.png",
+      "soundQ": "",
+      "soundT": "./audio/q3.mp3",
+      "answers": [{
+          "toChoose": "صَحِيحَةٌ ",
+          "answer": true,
+          "check": false
+        },
+        {
+          "toChoose": "خَطَأٌ",
+          "answer": false,
+          "check": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "active": false,
+      "numberOfTrial": 0,
+      "questionlevel": "",
+      "questionType": "text",
+      "answersType": "text",
+      "startTime": "",
+      "endTime": "",
+      "type": "trueFalse",
+      "title": "حَدِّدْ مَا إِذَا كَانَتِ الْعِبَارَةُ صَحِيحَةً أَمْ خَطَأً:",
+      "question": "هَذِهِ غُرْفَةٌ غَيْرُ مُرَتَّبَةٍ.",
+      "img": "./images/6.png",
+      "soundQ": "",
+      "soundT": "./audio/q3.mp3",
+      "answers": [{
+          "toChoose": "صَحِيحَةٌ",
+          "answer": false,
+          "check": false
+        },
+        {
+          "toChoose": "خَطَأٌ",
+          "answer": true,
+          "check": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "active": false,
+      "numberOfTrial": 0,
+      "questionlevel": "",
+      "questionType": "text",
+      "answersType": "text",
+      "startTime": "",
+      "endTime": "",
+      "type": "trueFalse",
+      "title": "حَدِّدْ مَا إِذَا كَانَتِ الْعِبَارَةُ صَحِيحَةً أَمْ خَطَأً:",
+      "question": "هَذِهِ مَكْتَبَةٌ وَاسِعَةٌ.",
+      "img": "./images/7.png",
+      "soundQ": "",
+      "soundT": "./audio/q3.mp3",
+      "answers": [{
+          "toChoose": "صَحِيحَةٌ",
+          "answer": true,
+          "check": false
+        },
+        {
+          "toChoose": "خَطَأٌ",
+          "answer": false,
+          "check": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "active": false,
+      "numberOfTrial": 0,
+      "questionlevel": "",
+      "questionType": "text",
+      "answersType": "text",
+      "startTime": "",
+      "endTime": "",
+      "type": "trueFalse",
+      "title": "حَدِّدْ مَا إِذَا كَانَتِ الْعِبَارَةُ صَحِيحَةً أَمْ خَطَأً:",
+      "question": "هَذَا مَخْبَزٌ كَبِيرٌ.",
+      "img": "./images/8.png",
+      "soundQ": "",
+      "soundT": "./audio/q3.mp3",
+      "answers": [{
+          "toChoose": "صَحِيحَةٌ",
+          "answer": false,
+          "check": false
+        },
+        {
+          "toChoose": "خَطَأٌ",
+          "answer": true,
+          "check": false
+        }
+      ]
+    }
+
+
+
+
+
+  ]
+}]
