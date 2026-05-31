@@ -5,16 +5,17 @@ const scorm = pipwerks.SCORM;
 scorm.version = "1.2";
 
 let scormConnected = false;
-
+let scormStartTime = new Date();
 try {
   if (window.API || window.API_1484_11) {
     scormConnected = scorm.init();
-
+    console.log("SCORM Init:", scormConnected);
     if (scormConnected) {
       console.log("SCORM Connected");
-
       scorm.set("cmi.core.lesson_status", "incomplete");
+      scorm.set("cmi.core.score.raw", "0");
       scorm.save();
+      console.log("SCORM Connected");
     }
   } else {
     console.log("Running outside LMS");
@@ -124,23 +125,42 @@ window.app = new Vue({
   },
 
   methods: {
+    formatScormTime(startDate) {
+      const diffMs = new Date() - startDate;
+
+      const totalSeconds = Math.floor(diffMs / 1000);
+
+      const hh = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+      const mm = String(Math.floor((totalSeconds % 3600) / 60)).padStart(
+        2,
+        "0",
+      );
+      const ss = String(totalSeconds % 60).padStart(2, "0");
+
+      return `${hh}:${mm}:${ss}`;
+    },
     reportScormResult(score) {
-      if (!scormConnected) return;
+      if (!scormConnected) {
+        console.log("SCORM not connected");
+        return;
+      }
 
       try {
-        scorm.set("cmi.core.score.raw", Math.round(score));
+        const sessionTime = this.formatScormTime(scormStartTime);
+
+        scorm.set("cmi.core.score.raw", String(Math.round(score)));
         scorm.set("cmi.core.score.min", "0");
         scorm.set("cmi.core.score.max", "100");
 
-        if (score >= 50) {
-          scorm.set("cmi.core.lesson_status", "passed");
-        } else {
-          scorm.set("cmi.core.lesson_status", "failed");
-        }
+        scorm.set("cmi.core.lesson_status", score >= 50 ? "passed" : "failed");
+
+        scorm.set("cmi.core.session_time", sessionTime);
 
         scorm.save();
 
-        console.log("SCORM Score Sent:", score);
+        console.log("SCORM Saved");
+        console.log("Score:", score);
+        console.log("Time:", sessionTime);
       } catch (err) {
         console.error("SCORM Reporting Error:", err);
       }
@@ -193,14 +213,6 @@ window.app = new Vue({
     /* ===================== DATA ===================== */
 
     async getData() {
-      // if (runPage) {
-      //   this.isSuccess = true;
-      // } else {
-      //   await returnData.then((response) => {
-      //     this.isSuccess = response.value;
-      //     this.getFeedBackJson();
-      //   });
-      // }
       await fetch(pageUrl + ".json")
         .then((res) => res.json())
         .then((data) => {
@@ -1001,41 +1013,18 @@ window.app = new Vue({
     finished() {
       let result =
         (this.posts[0].LOcorrectcounter / this.posts[0].numberOfquestion) * 100;
-      console.log(result + "result");
       this.reportScormResult(result);
-      this.posts[0].counterCorrect =
-        result == 0
-          ? 0
-          : result == 0
-            ? 0
-            : result <= 25
-              ? 2.5
-              : result <= 50
-                ? 5
-                : result <= 75
-                  ? 7.5
-                  : 10;
+      if (scormConnected) {
+        setTimeout(() => {
+          scorm.save();
 
-      finalResponse.submitData(
-        JSON.stringify(this.posts[0]),
-        (this.posts[0].counterCorrect * 4) / 10,
-        this.posts[0].counterCorrect,
-      );
-      result >= 50
-        ? [
-            (this.passLo = true),
-            this.feedbackPassAudio.play(),
-            setTimeout(() => {
-              this.feedTxtCorrect.play();
-            }, 1000),
-          ]
-        : [
-            (this.passLo = false),
-            this.feedbackFailAudio.play(),
-            setTimeout(() => {
-              this.feedTxtWrong.play();
-            }, 1000),
-          ];
+          try {
+            scorm.quit();
+          } catch (e) {
+            console.error(e);
+          }
+        }, 1000);
+      }
     },
     shuffleArray(arr) {
       const newArr = [...arr];
